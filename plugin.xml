@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         id="com.incentfit.plugins.healthkit"
-        version="0.3.8">
+        version="0.3.10">
 
   <name>HealthKit</name>
 
@@ -9,7 +9,7 @@
     Interact with the iOS8 HealthKit SDK
   </description>
 
-  <author>Eddy Verbruggen / Telerik</author>
+  <author>IncentFit</author>
 
   <license>MIT</license>
 
@@ -35,6 +35,13 @@
         <param name="ios-package" value="HealthKit"/>
       </feature>
     </config-file>
+    
+        <config-file target="*-Info.plist" parent="UIBackgroundModes">
+            <array>
+                <string>fetch</string>
+                <string>remote-notification</string>
+            </array>
+        </config-file>
 
     <!-- commented this because it means you can't use the app on iPad -->
     <!--config-file target="*-Info.plist" parent="UIRequiredDeviceCapabilities">
